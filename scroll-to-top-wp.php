@@ -26,13 +26,64 @@ function llsttwp_enqueue_script(){
 }
 add_action( 'wp_enqueue_scripts', 'llsttwp_enqueue_script');
 
-function llsttwp_scroll_script(){?>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery.scrollUp();
-        });
-    </script>
+function llsttwp_scroll_script(){
+    ?>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery.scrollUp();
+            });
+        </script>
     <?php
 }
-add_action("wp_footer","llsttwp_scroll_script")
+add_action("wp_footer","llsttwp_scroll_script");
+
+// Enqueue Color Picker script and styles
+function llsttwp_enqueue_customizer_assets() {
+    wp_enqueue_script('wp-color-picker');
+    wp_enqueue_style('wp-color-picker');
+}
+add_action('customize_controls_enqueue_scripts', 'llsttwp_enqueue_customizer_assets');
+
+// Plugin Customization Sattings
+add_action( "customize_register", "llsttwp_scroll_to_top" );
+function llsttwp_scroll_to_top($wp_customize){
+  $wp_customize-> add_section('llsttwp_scroll_top_section', array(
+    'title' => __('Scroll To Top', 'llsttwp'),
+    'description' => 'Simple Scroll to top plugin will help you to enable Back to Top button to your WordPress website.',
+  ));
+
+  // color change
+  $wp_customize ->add_setting('llsttwp_default_color', array(
+    'default' => '#000000',
+  ));
+  $wp_customize->add_control('llsttwp_default_color', array(
+      'label'   => 'Background Color',
+      'section' => 'llsttwp_scroll_top_section',
+      'type'    => 'color',
+  ));
+  
+  // Adding Rounded Corner
+  $wp_customize ->add_setting('llsttwp_rounded_corner', array(
+    'default' => '5px',
+    'description' => 'If you need fully rounded or circular then use 25px here.',
+  ));
+  $wp_customize->add_control('llsttwp_rounded_corner', array(
+      'label'   => 'Rounded Corner',
+      'section' => 'llsttwp_scroll_top_section',
+      'type'    => 'text',
+  ));
+}
+
+function llsttwp_theme_color_cus(){
+    ?>
+        <style>
+            #scrollUp {
+                background-color: <?php print get_theme_mod("llsttwp_default_color") ?>;
+                border-radius: <?php print get_theme_mod('llsttwp_rounded_corner') ?>;
+            }
+        </style>
+    <?php
+}
+add_action('wp_head','llsttwp_theme_color_cus');
+
 ?>
