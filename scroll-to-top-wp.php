@@ -1,6 +1,6 @@
 <?php
 /**
-*Plugin Name:       Scroll To Top WP
+*Plugin Name:       LL Scroll To Top WP
 *Plugin URI:        https://wordpress.org/plugins/scroll-to-top-wp/
 *Description:       Scroll to top plugin will help you to enable Back to Top button to your WordPress website.
 *Version:           1.0.0
@@ -8,8 +8,8 @@
 *Requires PHP:      7.4
 *Author:            Luminous Labs BD
 *Author URI:        https://luminouslabsbd.com
-*Update URI:        https://github.com/Nasim25/scroll-to-top-wp-plugin
 *License:           GPLv2 or later
+*License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 *Text Domain:       llsttwp
 */
 
@@ -61,7 +61,7 @@ function llsttwp_scroll_to_top($wp_customize){
       'section' => 'llsttwp_scroll_top_section',
       'type'    => 'color',
   ));
-  
+
   // Adding Rounded Corner
   $wp_customize ->add_setting('llsttwp_rounded_corner', array(
     'default' => '5px',
