@@ -77,7 +77,7 @@ function llsttwp_scroll_to_top($wp_customize){
 function llsttwp_theme_color_cus(){
     ?>
         <style>
-            #scrollUp {
+            #llsttwpscrollUp {
                 background-color: <?php print get_theme_mod("llsttwp_default_color") ?>;
                 border-radius: <?php print get_theme_mod('llsttwp_rounded_corner') ?>;
             }
