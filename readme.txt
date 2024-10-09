@@ -1,7 +1,7 @@
-=== Scroll To Top WP===
-Contributors: luminouslabsbd
-Donate link: 
-Author URI: https://luminouslabsbd.com/
+=== Page Scroll To Top WP===
+Contributors: mdnasimuddin
+Donate link: https://buymeacoffee.com/mdnasimuddin
+Author URI: https://exdesigners.shop/
 Plugin URI: https://wordpress.org/plugins/scroll-to-top-wp/
 Tags: Simple Scroll To Top, Scroll To Top, Back to Top button, Back to Top.
 Requires at least: 5.2
@@ -17,8 +17,8 @@ Scroll to top plugin will help you to enable Back to Top button to your WordPres
 
 Plugin Documentation: [https://wordpress.org/plugins/scroll-to-top-wp/](https://wordpress.org/plugins/scroll-to-top-wp/)
 	
-*   [Need Help?](https://luminouslabsbd.com/)		
-*   [About Author](https://luminouslabsbd.com/)
+*   [Need Help?](https://exdesigners.shop/)		
+*   [About Author](https://exdesigners.shop/)
 
 == Video Tutorial ==
 Include Soon!
