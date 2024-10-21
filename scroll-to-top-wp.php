@@ -20,6 +20,12 @@ function llsttwp_enqueue_style()
     if (!is_admin()) {
         wp_register_style('llsttwp-style', plugins_url('css/llsttwp-style.css', __FILE__), [], '1.0.0');
         wp_enqueue_style('llsttwp-style');
+
+        wp_add_inline_style('llsttwp-style', "
+        #llsttwpscrollUp {
+            background-color: " . esc_html(get_theme_mod('llsttwp_default_color')) . ";
+            border-radius: " . esc_html(get_theme_mod('llsttwp_rounded_corner')) . ";
+        }");
     }
 }
 add_action('wp_enqueue_scripts', 'llsttwp_enqueue_style');
@@ -30,21 +36,10 @@ function llsttwp_enqueue_script()
     if (!is_admin()) {
         wp_register_script('llsttwp-script', plugins_url('js/llsttwp-plugin.js', __FILE__), ['jquery'], '1.0.0', true);
         wp_enqueue_script('llsttwp-script');
+        wp_add_inline_script('llsttwp-script', 'jQuery(document).ready(function() { jQuery.scrollUp(); });');
     }
 }
 add_action('wp_enqueue_scripts', 'llsttwp_enqueue_script');
-
-function llsttwp_scroll_script()
-{
-?>
-    <script>
-        jQuery(document).ready(function() {
-            jQuery.scrollUp();
-        });
-    </script>
-<?php
-}
-add_action("wp_footer", "llsttwp_scroll_script");
 
 // Enqueue Color Picker script and styles
 function llsttwp_enqueue_customizer_assets()
