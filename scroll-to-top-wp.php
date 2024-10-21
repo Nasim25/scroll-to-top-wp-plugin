@@ -80,17 +80,4 @@ function llsttwp_scroll_to_top($wp_customize)
     ]);
 }
 
-function llsttwp_theme_color_cus()
-{
-?>
-    <style>
-        #llsttwpscrollUp {
-            background-color: <?php echo esc_html(get_theme_mod("llsttwp_default_color")); ?>;
-            border-radius: <?php echo esc_html(get_theme_mod('llsttwp_rounded_corner')); ?>;
-        }
-    </style>
-<?php
-}
-add_action('wp_head', 'llsttwp_theme_color_cus');
-
 ?>
